@@ -16,12 +16,32 @@ function [error_train, error_val] = ...
 
 % Number of training examples
 m = size(X, 1);
+k = size(Xval, 1);
+
 
 % You need to return these values correctly
 error_train = zeros(m, 1);
 error_val   = zeros(m, 1);
 
 % ====================== YOUR CODE HERE ======================
+for i=1:m
+X2=X(1:i,:)
+y2=y(1:i)
+
+theta2=trainLinearReg(X2,y2,lambda)
+
+n = size(X2, 1);
+error_train(i)=(1/(2*n))*sum((X2*theta2-y2).^2)
+
+error_val(i)=(1/(2*k))*sum((Xval*theta2-yval).^2)
+
+end;
+
+
+
+
+
+
 % Instructions: Fill in this function to return training errors in 
 %               error_train and the cross validation errors in error_val. 
 %               i.e., error_train(i) and 
