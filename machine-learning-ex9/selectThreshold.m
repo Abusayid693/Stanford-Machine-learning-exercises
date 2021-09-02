@@ -14,6 +14,24 @@ stepsize = (max(pval) - min(pval)) / 1000;
 for epsilon = min(pval):stepsize:max(pval)
     
     % ====================== YOUR CODE HERE ======================
+temp=(pval<epsilon)
+
+%== This will return number of tp,fp and fn
+tp=sum( (yval == 1) & (temp == 1))
+fp=sum( (temp == 1) & (yval == 0))
+fn=sum( (temp == 0) & (yval == 1))
+
+prec =tp/(tp+fp)
+rec=tp/(tp+fn)
+
+F1=(2*prec*rec)/(prec+rec)
+
+
+
+
+
+
+
     % Instructions: Compute the F1 score of choosing epsilon as the
     %               threshold and place the value in F1. The code at the
     %               end of the loop will compare the F1 score for this

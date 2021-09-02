@@ -15,6 +15,18 @@ mu = zeros(n, 1);
 sigma2 = zeros(n, 1);
 
 % ====================== YOUR CODE HERE ======================
+
+mu = (1/m)*sum(X)
+
+
+sigma2=(1/m)*sum((X-mu).^2)
+
+
+
+
+
+
+
 % Instructions: Compute the mean of the data and the variances
 %               In particular, mu(i) should contain the mean of
 %               the data for the i-th feature and sigma2(i)

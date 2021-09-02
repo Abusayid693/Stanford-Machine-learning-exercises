@@ -18,6 +18,19 @@ X_grad = zeros(size(X));
 Theta_grad = zeros(size(Theta));
 
 % ====================== YOUR CODE HERE ======================
+
+temp=(X*Theta'-Y);
+temp2=temp.^2
+%==== Multiplying with R makes all values to 0 for those movies was not rated===
+J=(1/2)*sum(sum(temp2.*R)) + (lambda/2)*sum(sum(X.^2)) + (lambda/2)*sum(sum(Theta.^2))
+
+
+
+X_grad=(temp.*R)*Theta + lambda*X;
+Theta_grad=(temp.*R)'*X+lambda*Theta
+
+
+
 % Instructions: Compute the cost function and gradient for collaborative
 %               filtering. Concretely, you should first implement the cost
 %               function (without regularization) and make sure it is
