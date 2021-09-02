@@ -1,9 +1,9 @@
-# Machine-learning-exercises
-`Stanford - Andrew Ng Machine learning exercises`
-[Click here](https://www.coursera.org/learn/machine-learning)
+# Stanford - Andrew Ng Machine learning exercises(solved)
 
----
 
-Just a track record for all exercises
+Just a track record for all exercises [Click here](https://www.coursera.org/learn/machine-learning)
+
+
+
 
 
